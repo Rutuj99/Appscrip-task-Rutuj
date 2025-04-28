@@ -1,0 +1,377 @@
+/* ProductListing.module.css */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Navigation styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.navbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 5;
+  }
+
+  .navLinks.mobileMenuOpen {
+    transform: translateX(0);
+  }
+
+  .navLink {
+    font-size: 20px;
+  }
+}
+
+.navLink {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Hamburger Menu styles moved to Navbar.module.css */
+
+/* Content layout */
+.content {
+  display: flex;
+  gap: 30px;
+}
+
+/* Filters sidebar */
+.filterSidebar {
+  width: 250px;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.filterSidebarClosed {
+  width: 50px;
+  overflow: hidden;
+}
+
+.sidebarToggle {
+  position: absolute;
+  right: -15px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filterSection {
+  margin-bottom: 25px;
+}
+
+.filterTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.filterCheckbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Products grid */
+.productsContainer {
+  flex: 1;
+}
+
+.sortingBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resultsCount {
+  font-size: 14px;
+  color: #666;
+}
+
+.sortDropdown {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.productCard {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: white;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.productImageContainer {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.productImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.productInfo {
+  padding: 15px;
+}
+
+.productTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+  /* Limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.productPrice {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.productCategory {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.productRating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Footer styles */
+.footer {
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eaeaea;
+  padding: 30px 0 0 0;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerSection {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footerSection h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.footerSection p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerSection li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.footerSection li:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footerBottom {
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+  border-top: 1px solid #eaeaea;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  .hamburgerMenu {
+    display: flex;
+  }
+  
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .mobileMenuOpen {
+    display: flex;
+  }
+  
+  .filterSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 80%;
+    max-width: 300px;
+    overflow-y: auto;
+  }
+  
+  .filterSidebar.mobileMenuOpen {
+    transform: translateX(0);
+  }
+  
+  .sidebarToggle {
+    display: none;
+  }
+  
+  .productsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .sortingBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .footerContent {
+    flex-direction: column;
+  }
+  
+  .footerSection {
+    margin-bottom: 30px;
+  }
+}
