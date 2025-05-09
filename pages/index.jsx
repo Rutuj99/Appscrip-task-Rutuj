@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../styles/ProductListing.module.css';
-
-// Import components
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import ProductGrid from '../components/ProductGrid';
@@ -14,10 +12,10 @@ export default function ProductListing({ products }) {
   const [sortOption, setSortOption] = useState('default');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   
-  // Get unique categories from products
+
   const categories = [...new Set(products.map(product => product.category))];
   
-  // Filter products based on selected categories
+  
   useEffect(() => {
     if (selectedCategories.length === 0) {
       setFilteredProducts(products);
